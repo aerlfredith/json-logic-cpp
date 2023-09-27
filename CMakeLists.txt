@@ -5,11 +5,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 include_directories(src)
 
-try_compile(HAVE_EXECUTION ${CMAKE_BINARY_DIR} ${PROJECT_SOURCE_DIR}/src/executiontest.cpp)
-if(NOT HAVE_EXECUTION)
-        message(FATAL_ERROR "Compiler seems to be old, unable to compile this source")
-endif()
-
 add_library(
         ${PROJECT_NAME}
 
@@ -21,7 +16,6 @@ add_library(
         src/operations/array/map.cpp
         src/operations/array/merge.cpp
         src/operations/array/none.cpp
-        src/operations/array/reduce.cpp
         src/operations/array/some.cpp
         src/operations/data/missing.cpp
         src/operations/data/missing_some.cpp
